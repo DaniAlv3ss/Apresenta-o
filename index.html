@@ -3,158 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heatmap de Avaliação Modernizado</title>
-    <!-- Incluindo Tailwind CSS para estilização -->
+    <title>Apresentação: Guia Avançado de Montagem de PCs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        // Aplicando a fonte Inter ao projeto
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('image_94cb38.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-content {
+            min-height: 480px; /* Aumentado para mais conteúdo */
+        }
+        /* Cores KaBuM! */
+        .kabum-orange { color: #FF6600; }
+        .bg-kabum-orange { background-color: #FF6600; }
+        .hover\:bg-kabum-orange-dark:hover { background-color: #e65c00; }
+        .kabum-blue { color: #003F91; }
+        .from-kabum-orange { --tw-gradient-from: #FF6600; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 102, 0, 0)); }
+        .to-kabum-blue { --tw-gradient-to: #003F91; }
+        .border-kabum-orange { border-color: #FF6600; }
+    </style>
 </head>
-<body class="bg-slate-100 font-sans flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<body class="text-gray-800 flex flex-col items-center justify-center min-h-screen p-4">
 
-    <div class="w-full max-w-7xl bg-white rounded-2xl shadow-lg border border-slate-200/80 overflow-hidden">
-        <div class="p-6 border-b border-slate-200">
-            <h1 class="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight text-center">Relatório de Avaliação de Qualidade</h1>
-            <p class="text-sm text-slate-500 text-center mt-2">Análise de problemas por categoria e mês</p>
+    <div id="presentation-container" class="w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+        
+        <!-- Slide de Título -->
+        <div id="slide-0" class="slide active">
+            <div class="p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center text-center slide-content">
+                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-kabum-orange to-kabum-blue">Guia Avançado de Montagem de PCs</h1>
+                <p class="text-xl sm:text-2xl text-gray-700">Do Planejamento à Execução com Maestria</p>
+            </div>
         </div>
-        <div class="overflow-x-auto">
-            <table class="w-full text-sm" id="heatmap-table">
-                <thead class="bg-slate-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-left w-1/6">Categoria</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-left w-2/6">Avaliação</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Junho</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Julho</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Agosto</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Total</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-200" id="table-body">
-                    <!-- As linhas da tabela serão inseridas aqui dinamicamente pelo JavaScript -->
-                </tbody>
-            </table>
+
+        <!-- Módulo 1 -->
+        <div id="slide-1" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 1</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Planejamento Estratégico e Seleção</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
+                        <i class="ph-bold ph-puzzle-piece text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Sinergia Estética</h4>
+                        <p class="text-gray-600 text-sm">Escolher componentes do mesmo ecossistema (Corsair iCUE, ASUS Aura) unifica o controle de iluminação e performance via software, criando um visual coeso.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
+                        <i class="ph-bold ph-desktop text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Análise de Gabinetes</h4>
+                        <p class="text-gray-600 text-sm">Verifique o suporte para radiadores, fans e as rotas de cabos. Um bom layout interno é crucial para a montagem e o resultado final.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
+                         <i class="ph-bold ph-list-checks text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Lista de Componentes</h4>
+                        <p class="text-gray-600 text-sm">Crie uma lista balanceada, onde nenhuma peça limite o desempenho da outra. A harmonia entre performance e estética é a chave.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 2 -->
+        <div id="slide-2" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 2</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Otimização de Fluxo de Ar e Refrigeração</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-wind text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Conceitos de Pressão</h4>
+                        <p class="text-gray-600 text-sm">Aprenda a balancear a pressão de ar (positiva, negativa ou neutra) para otimizar a refrigeração e minimizar o acúmulo de poeira dentro do gabinete.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-gear-six text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Tipos de Ventoinhas</h4>
+                        <p class="text-gray-600 text-sm">Diferencie ventoinhas de fluxo de ar (Airflow) e pressão estática. Use as de pressão em radiadores e as de fluxo para ventilação geral do case.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-waves text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Refrigeração Líquida</h4>
+                        <p class="text-gray-600 text-sm">O posicionamento do radiador (topo, frontal ou lateral) impacta diretamente as temperaturas da CPU e GPU. Analisaremos os prós e contras de cada posição.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-sparkle text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Preenchimento Estético</h4>
+                        <p class="text-gray-600 text-sm">Espaços vazios podem ser preenchidos com ventoinhas extras (mesmo em baixa rotação) para um visual mais completo e robusto, sem prejudicar o fluxo de ar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Módulo 3 -->
+        <div id="slide-3" class="slide">
+             <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 3</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Técnicas de Acabamento e Estética</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
+                        <i class="ph-bold ph-plugs text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Gestão de Cabos</h4>
+                        <p class="text-gray-600 text-sm">Um "cable management" bem feito na parte frontal é o cartão de visitas de uma montagem premium. Use organizadores e planeje as rotas.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
+                        <i class="ph-bold ph-rows text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Painel Traseiro</h4>
+                        <p class="text-gray-600 text-sm">A organização traseira com fitas de velcro e abraçadeiras facilita futuras manutenções e garante que a tampa feche sem esforço.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
+                         <i class="ph-bold ph-paint-brush text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Customização</h4>
+                        <p class="text-gray-600 text-sm">Eleve o nível da montagem com suportes verticais para GPU, cabos customizados e sincronia total do ARGB para um setup único.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 4 -->
+        <div id="slide-4" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 4</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Controle de Qualidade e Diagnóstico</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-cpu text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Teste de Bancada</h4>
+                        <p class="text-gray-600 text-sm">Antes de parafusar tudo no gabinete, teste CPU, RAM e GPU na caixa da placa-mãe. Isso previne a dor de cabeça de desmontar tudo se algo não funcionar.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-first-aid-kit text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Metodologia de Diagnóstico</h4>
+                        <p class="text-gray-600 text-sm">Não liga? Verifique os cabos. Bipou? Consulte o manual. Crie um fluxo lógico para identificar problemas de forma rápida e eficiente, sem achismos.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                         <i class="ph-bold ph-users-three text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Atividade Prática</h4>
+                        <p class="text-gray-600 text-sm">Hora de aplicar o conhecimento! Duas equipes receberão máquinas com defeitos. A primeira a diagnosticar e consertar o problema, vence!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Encerramento -->
+        <div id="slide-5" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Encerramento</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Encerramento e Próximos Passos</h3>
+                 <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-presentation-chart text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Recapitulação</h4>
+                        <p class="text-gray-600 text-sm">Revisamos desde o planejamento e a importância da sinergia até as técnicas avançadas de montagem e diagnóstico de falhas.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-seal-check text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Novas Diretrizes</h4>
+                        <p class="text-gray-600 text-sm">Vamos aplicar este conhecimento para estabelecer um novo padrão de qualidade e excelência em todas as nossas montagens.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                         <i class="ph-bold ph-question text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Feedback e Dúvidas</h4>
+                        <p class="text-gray-600 text-sm">Este é o momento para perguntas, sugestões e para compartilharmos nossas experiências. Obrigado a todos!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegação e Progresso -->
+        <div class="bg-gray-200/80 p-4 flex items-center justify-between">
+            <div>
+                <span id="slide-counter" class="text-sm font-semibold text-gray-600"></span>
+            </div>
+            <div class="flex space-x-2">
+                <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Anterior
+                </button>
+                <button id="next-btn" class="bg-kabum-orange hover:bg-kabum-orange-dark text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+                    Próximo
+                </button>
+            </div>
         </div>
     </div>
 
     <script>
-        const tableData = [
-            {
-                category: 'Funcionamento do PC',
-                items: [
-                    { evaluation: 'Problemas com o Sistema (Driver, OS, BIOS, etc)', junho: 1, julho: 1, agosto: 2, total: 4 },
-                    { evaluation: 'Peça não funciona', junho: null, julho: 1, agosto: 4, total: 5 },
-                    { evaluation: 'Não Liga', junho: 3, julho: 1, agosto: 2, total: 6 },
-                    { evaluation: 'Liga, mas dá erro (Sem imagem, tela azul, etc)', junho: 2, julho: null, agosto: 3, total: 5 },
-                ],
-                total: { junho: 7, julho: 2, agosto: 11, total: 20 }
-            },
-            {
-                category: 'Qualidade da Montagem',
-                items: [
-                    { evaluation: 'Ventoinhas (Montagem errada, não liga, etc)', junho: 3, julho: 2, agosto: 2, total: 7 },
-                    { evaluation: 'Peça solta', junho: 4, julho: null, agosto: 3, total: 7 },
-                    { evaluation: 'Conexões não funcionam (Painéis, USB, etc)', junho: 1, julho: 1, agosto: null, total: 2 },
-                    { evaluation: 'Cabos desconectados', junho: 1, julho: 1, agosto: 1, total: 3 },
-                ],
-                total: { junho: 9, julho: 4, agosto: 6, total: 19 }
-            },
-            {
-                category: 'Transporte',
-                items: [
-                    { evaluation: 'Problema com embalagem', junho: null, julho: null, agosto: 1, total: 1 },
-                    { evaluation: 'Consta como entregue, mas não recebi', junho: null, julho: null, agosto: 1, total: 1 },
-                    { evaluation: 'Atraso na entrega', junho: 2, julho: null, agosto: null, total: 2 },
-                ],
-                total: { junho: 2, julho: 0, agosto: 2, total: 4 }
-            },
-            {
-                category: 'Visual do PC',
-                items: [
-                    { evaluation: 'RGB com problemas', junho: 2, julho: null, agosto: 1, total: 3 },
-                    { evaluation: 'Fios desorganizados', junho: 2, julho: null, agosto: 2, total: 4 },
-                ],
-                total: { junho: 4, julho: 0, agosto: 3, total: 7 }
-            }
-        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
 
-        // Função para determinar a cor da célula com base no valor (lógica do heatmap)
-        function getHeatmapColor(value) {
-            if (value === null || value === 0 || value === undefined) {
-                return 'bg-white';
-            }
-            if (value >= 4) return 'bg-orange-600 text-white';
-            if (value >= 3) return 'bg-orange-500 text-white';
-            if (value >= 2) return 'bg-orange-400 text-slate-800';
-            if (value >= 1) return 'bg-orange-300 text-slate-800';
-            return 'bg-white';
-        }
-
-        const tableBody = document.getElementById('table-body');
-
-        tableData.forEach((data) => {
-            const categoryRowCount = data.items.length + 1; 
-
-            data.items.forEach((item, itemIndex) => {
-                const row = document.createElement('tr');
-                row.className = 'hover:bg-slate-50';
-                
-                if (itemIndex === 0) {
-                    const categoryCell = document.createElement('td');
-                    categoryCell.textContent = data.category;
-                    categoryCell.className = 'px-6 py-4 bg-blue-800 text-white font-bold text-center align-middle';
-                    categoryCell.setAttribute('rowspan', categoryRowCount);
-                    row.appendChild(categoryCell);
-                }
-                
-                const evaluationCell = document.createElement('td');
-                evaluationCell.textContent = item.evaluation;
-                evaluationCell.className = 'px-6 py-4 text-slate-700';
-                row.appendChild(evaluationCell);
-
-                ['junho', 'julho', 'agosto', 'total'].forEach(month => {
-                    const cell = document.createElement('td');
-                    const value = item[month];
-                    cell.textContent = value ?? '';
-                    cell.className = `px-6 py-4 text-center font-medium transition-colors duration-300 ${getHeatmapColor(value)}`;
-                    row.appendChild(cell);
+            function showSlide(index) {
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
                 });
 
-                tableBody.appendChild(row);
+                const slideToShow = document.getElementById(`slide-${index}`);
+                if (slideToShow) {
+                    slideToShow.classList.add('active');
+                }
+
+                slideCounter.textContent = `Slide ${index + 1} de ${totalSlides}`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+                 if(index === totalSlides - 1) {
+                    nextBtn.textContent = "Finalizar";
+                } else {
+                    nextBtn.textContent = "Próximo";
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
             });
             
-            const totalRow = document.createElement('tr');
-            totalRow.className = 'bg-slate-100 font-semibold';
-            
-            const totalLabelCell = document.createElement('td');
-            totalLabelCell.textContent = `${data.category} Total`;
-            totalLabelCell.className = 'px-6 py-4 text-slate-800';
-            totalRow.appendChild(totalLabelCell);
-
-            ['junho', 'julho', 'agosto', 'total'].forEach(month => {
-                const cell = document.createElement('td');
-                const value = data.total[month];
-                cell.textContent = value ?? '';
-                cell.className = 'px-6 py-4 text-center text-slate-800';
-                totalRow.appendChild(cell);
+            // Navegação com as setas do teclado
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'ArrowRight'){
+                    if (currentSlide < totalSlides - 1) {
+                        currentSlide++;
+                        showSlide(currentSlide);
+                    }
+                } else if (e.key === 'ArrowLeft') {
+                     if (currentSlide > 0) {
+                        currentSlide--;
+                        showSlide(currentSlide);
+                    }
+                }
             });
 
-            tableBody.appendChild(totalRow);
+
+            showSlide(currentSlide);
         });
-
     </script>
 </body>
 </html>
-
 
