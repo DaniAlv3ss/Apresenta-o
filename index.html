@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação: Guia Avançado de Montagem de PCs</title>
+    <title>Workshop: Guia Avançado de Montagem de PCs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .slide-content {
-            min-height: 480px; /* Aumentado para mais conteúdo */
+            min-height: 520px; /* Aumentado para mais conteúdo */
         }
         /* Cores KaBuM! */
         .kabum-orange { color: #FF6600; }
@@ -39,149 +39,287 @@
         .from-kabum-orange { --tw-gradient-from: #FF6600; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 102, 0, 0)); }
         .to-kabum-blue { --tw-gradient-to: #003F91; }
         .border-kabum-orange { border-color: #FF6600; }
+        .ring-kabum-orange { ring-color: #FF6600; }
     </style>
 </head>
 <body class="text-gray-800 flex flex-col items-center justify-center min-h-screen p-4">
 
-    <div id="presentation-container" class="w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+    <div id="presentation-container" class="w-full max-w-7xl bg-white/80 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-gray-200">
         
-        <!-- Slide de Título -->
+        <!-- Slide 0: Título -->
         <div id="slide-0" class="slide active">
             <div class="p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center text-center slide-content">
-                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-kabum-orange to-kabum-blue">Guia Avançado de Montagem de PCs</h1>
+                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 kabum-blue">Workshop: Montagem de PCs</h1>
                 <p class="text-xl sm:text-2xl text-gray-700">Do Planejamento à Execução com Maestria</p>
             </div>
         </div>
 
-        <!-- Módulo 1 -->
+        <!-- Slide 1: Agenda -->
         <div id="slide-1" class="slide">
             <div class="p-8 sm:p-12 slide-content">
-                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 1</h2>
-                <h3 class="text-3xl font-bold kabum-blue mb-8">Planejamento Estratégico e Seleção</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-left">
-                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
-                        <i class="ph-bold ph-puzzle-piece text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Sinergia Estética</h4>
-                        <p class="text-gray-600 text-sm">Escolher componentes do mesmo ecossistema (Corsair iCUE, ASUS Aura) unifica o controle de iluminação e performance via software, criando um visual coeso.</p>
-                    </div>
-                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
-                        <i class="ph-bold ph-desktop text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Análise de Gabinetes</h4>
-                        <p class="text-gray-600 text-sm">Verifique o suporte para radiadores, fans e as rotas de cabos. Um bom layout interno é crucial para a montagem e o resultado final.</p>
-                    </div>
-                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
-                         <i class="ph-bold ph-list-checks text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Lista de Componentes</h4>
-                        <p class="text-gray-600 text-sm">Crie uma lista balanceada, onde nenhuma peça limite o desempenho da outra. A harmonia entre performance e estética é a chave.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Módulo 2 -->
-        <div id="slide-2" class="slide">
-            <div class="p-8 sm:p-12 slide-content">
-                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 2</h2>
-                <h3 class="text-3xl font-bold kabum-blue mb-8">Otimização de Fluxo de Ar e Refrigeração</h3>
-                <div class="grid md:grid-cols-2 gap-6 text-left">
+                <h3 class="text-3xl font-bold kabum-blue mb-8 text-center">Agenda do Workshop</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-wind text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Conceitos de Pressão</h4>
-                        <p class="text-gray-600 text-sm">Aprenda a balancear a pressão de ar (positiva, negativa ou neutra) para otimizar a refrigeração e minimizar o acúmulo de poeira dentro do gabinete.</p>
+                        <i class="ph-bold ph-strategy text-5xl kabum-orange mx-auto mb-3"></i>
+                        <h4 class="font-bold kabum-blue text-lg">Módulo 1</h4>
+                        <p class="text-gray-600 text-sm">Planejamento e Seleção</p>
                     </div>
                     <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-gear-six text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Tipos de Ventoinhas</h4>
-                        <p class="text-gray-600 text-sm">Diferencie ventoinhas de fluxo de ar (Airflow) e pressão estática. Use as de pressão em radiadores e as de fluxo para ventilação geral do case.</p>
+                        <i class="ph-bold ph-wind text-5xl kabum-orange mx-auto mb-3"></i>
+                        <h4 class="font-bold kabum-blue text-lg">Módulo 2</h4>
+                        <p class="text-gray-600 text-sm">Fluxo de Ar e Refrigeração</p>
                     </div>
                     <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-waves text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Refrigeração Líquida</h4>
-                        <p class="text-gray-600 text-sm">O posicionamento do radiador (topo, frontal ou lateral) impacta diretamente as temperaturas da CPU e GPU. Analisaremos os prós e contras de cada posição.</p>
+                        <i class="ph-bold ph-magic-wand text-5xl kabum-orange mx-auto mb-3"></i>
+                        <h4 class="font-bold kabum-blue text-lg">Módulo 3</h4>
+                        <p class="text-gray-600 text-sm">Acabamento e Estética</p>
                     </div>
                     <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-sparkle text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Preenchimento Estético</h4>
-                        <p class="text-gray-600 text-sm">Espaços vazios podem ser preenchidos com ventoinhas extras (mesmo em baixa rotação) para um visual mais completo e robusto, sem prejudicar o fluxo de ar.</p>
+                        <i class="ph-bold ph-wrench text-5xl kabum-orange mx-auto mb-3"></i>
+                        <h4 class="font-bold kabum-blue text-lg">Módulo 4</h4>
+                        <p class="text-gray-600 text-sm">Qualidade e Diagnóstico</p>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Módulo 3 -->
+        <!-- Módulo 1: Início -->
+        <div id="slide-2" class="slide">
+            <div class="p-8 sm:p-12 flex items-center justify-center slide-content text-center">
+                <div>
+                    <h2 class="text-lg uppercase font-semibold kabum-orange mb-2">Módulo 1</h2>
+                    <h3 class="text-5xl font-bold kabum-blue">Planejamento Estratégico e Seleção</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 1: Sinergia Estética -->
         <div id="slide-3" class="slide">
-             <div class="p-8 sm:p-12 slide-content">
-                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 3</h2>
-                <h3 class="text-3xl font-bold kabum-blue mb-8">Técnicas de Acabamento e Estética</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-left">
-                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
-                        <i class="ph-bold ph-plugs text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Gestão de Cabos</h4>
-                        <p class="text-gray-600 text-sm">Um "cable management" bem feito na parte frontal é o cartão de visitas de uma montagem premium. Use organizadores e planeje as rotas.</p>
+            <div class="p-8 sm:p-12 slide-content">
+                 <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 1</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Sinergia Estética: O Conceito</h3>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-lg text-gray-700 mb-4">É a arte de escolher componentes que não apenas funcionam bem juntos, mas que também "conversam" entre si visualmente e via software.</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><i class="ph-fill ph-check-circle text-xl kabum-orange mr-3 mt-1"></i><span><strong class="kabum-blue">Controle Unificado:</strong> Gerencie iluminação, ventoinhas e performance em um único lugar.</span></li>
+                            <li class="flex items-start"><i class="ph-fill ph-check-circle text-xl kabum-orange mr-3 mt-1"></i><span><strong class="kabum-blue">Visual Coeso:</strong> Crie efeitos de iluminação sincronizados e um design harmonioso.</span></li>
+                            <li class="flex items-start"><i class="ph-fill ph-check-circle text-xl kabum-orange mr-3 mt-1"></i><span><strong class="kabum-blue">Menos Conflitos:</strong> Reduza a chance de problemas de compatibilidade de software.</span></li>
+                        </ul>
                     </div>
-                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
-                        <i class="ph-bold ph-rows text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Painel Traseiro</h4>
-                        <p class="text-gray-600 text-sm">A organização traseira com fitas de velcro e abraçadeiras facilita futuras manutenções e garante que a tampa feche sem esforço.</p>
-                    </div>
-                    <div class="bg-white/50 p-4 rounded-lg border-l-4 border-kabum-orange">
-                         <i class="ph-bold ph-paint-brush text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Customização</h4>
-                        <p class="text-gray-600 text-sm">Eleve o nível da montagem com suportes verticais para GPU, cabos customizados e sincronia total do ARGB para um setup único.</p>
+                    <div class="flex items-center justify-center">
+                         <i class="ph-bold ph-puzzle-piece text-9xl text-gray-300"></i>
+                         <i class="ph-bold ph-plus text-5xl text-gray-400 mx-4"></i>
+                         <i class="ph-bold ph-paint-roller text-9xl text-gray-300"></i>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Módulo 4 -->
+        <!-- Módulo 1: Ecossistemas -->
         <div id="slide-4" class="slide">
             <div class="p-8 sm:p-12 slide-content">
-                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 4</h2>
-                <h3 class="text-3xl font-bold kabum-blue mb-8">Controle de Qualidade e Diagnóstico</h3>
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 1</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Ecossistemas Populares</h3>
+                <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">Cada marca principal tem seu próprio software para controlar seus produtos. Manter-se em um ecossistema simplifica muito a vida.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white/60 p-6 rounded-lg text-center font-bold text-lg kabum-blue border-2 border-transparent hover:border-kabum-orange transition-all">Corsair iCUE</div>
+                    <div class="bg-white/60 p-6 rounded-lg text-center font-bold text-lg kabum-blue border-2 border-transparent hover:border-kabum-orange transition-all">ASUS Aura Sync</div>
+                    <div class="bg-white/60 p-6 rounded-lg text-center font-bold text-lg kabum-blue border-2 border-transparent hover:border-kabum-orange transition-all">Gigabyte RGB Fusion</div>
+                    <div class="bg-white/60 p-6 rounded-lg text-center font-bold text-lg kabum-blue border-2 border-transparent hover:border-kabum-orange transition-all">MSI Mystic Light</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 1: Gabinetes -->
+        <div id="slide-5" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 1</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Análise de Gabinetes: Pontos-Chave</h3>
                 <div class="grid md:grid-cols-3 gap-6 text-left">
                     <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-cpu text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Teste de Bancada</h4>
-                        <p class="text-gray-600 text-sm">Antes de parafusar tudo no gabinete, teste CPU, RAM e GPU na caixa da placa-mãe. Isso previne a dor de cabeça de desmontar tudo se algo não funcionar.</p>
+                        <i class="ph-bold ph-waves text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Suporte a Refrigeração</h4>
+                        <p class="text-gray-600 text-sm">Verifique o tamanho máximo de radiadores (240mm, 280mm, 360mm) e onde podem ser instalados (topo, frontal). Isso define o potencial de refrigeração.</p>
                     </div>
                     <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-first-aid-kit text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Metodologia de Diagnóstico</h4>
-                        <p class="text-gray-600 text-sm">Não liga? Verifique os cabos. Bipou? Consulte o manual. Crie um fluxo lógico para identificar problemas de forma rápida e eficiente, sem achismos.</p>
+                        <i class="ph-bold ph-ruler text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Espaço para GPU e Cooler</h4>
+                        <p class="text-gray-600 text-sm">GPUs modernas são enormes. Confirme o comprimento máximo suportado. Para air coolers, verifique a altura máxima para não bater no vidro lateral.</p>
                     </div>
                     <div class="bg-white/50 p-4 rounded-lg">
-                         <i class="ph-bold ph-users-three text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Atividade Prática</h4>
-                        <p class="text-gray-600 text-sm">Hora de aplicar o conhecimento! Duas equipes receberão máquinas com defeitos. A primeira a diagnosticar e consertar o problema, vence!</p>
+                         <i class="ph-bold ph-plugs-connected text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Rotas para Cabos</h4>
+                        <p class="text-gray-600 text-sm">Um bom gabinete tem recortes bem posicionados, passadores de borracha e bastante espaço atrás para facilitar um cable management limpo.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Módulo 2: Início -->
+        <div id="slide-6" class="slide">
+            <div class="p-8 sm:p-12 flex items-center justify-center slide-content text-center">
+                <div>
+                    <h2 class="text-lg uppercase font-semibold kabum-orange mb-2">Módulo 2</h2>
+                    <h3 class="text-5xl font-bold kabum-blue">Otimização de Fluxo de Ar e Refrigeração</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 2: Pressão -->
+        <div id="slide-7" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 2</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Pressão de Ar: Positiva vs. Negativa</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white/50 p-6 rounded-lg border-l-4 border-kabum-orange">
+                        <h4 class="font-bold kabum-blue text-xl mb-2">Pressão Positiva</h4>
+                        <p class="text-gray-600 mb-3">Mais ar entrando do que saindo. O ar "vaza" pelas frestas.</p>
+                        <p class="font-semibold text-green-700">+ Menos acúmulo de poeira.</p>
+                        <p class="font-semibold text-red-700">- Potencialmente menos eficiente para expelir ar quente.</p>
+                    </div>
+                    <div class="bg-white/50 p-6 rounded-lg border-l-4 border-gray-400">
+                        <h4 class="font-bold text-gray-800 text-xl mb-2">Pressão Negativa</h4>
+                        <p class="text-gray-600 mb-3">Mais ar saindo do que entrando. O ar é "sugado" pelas frestas.</p>
+                        <p class="font-semibold text-green-700">+ Expele o ar quente de forma mais agressiva.</p>
+                        <p class="font-semibold text-red-700">- Acumula poeira muito mais rápido.</p>
+                    </div>
+                </div>
+                 <p class="text-center mt-6 text-gray-600"><strong class="kabum-blue">Recomendação:</strong> Uma leve pressão positiva é o ideal para a maioria dos casos.</p>
+            </div>
+        </div>
+
+        <!-- Módulo 2: Ventoinhas -->
+        <div id="slide-8" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 2</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Tipos de Ventoinhas: A Ferramenta Certa</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <i class="ph-bold ph-wind text-5xl kabum-orange mb-3"></i>
+                        <h4 class="font-bold kabum-blue text-xl mb-2">Fluxo de Ar (Airflow)</h4>
+                        <p class="text-gray-600">Projetadas para mover um grande volume de ar em espaços abertos. Possuem pás mais finas e inclinadas.</p>
+                        <p class="font-semibold mt-3">Ideal para: Puxar ar para dentro ou expelir ar para fora do gabinete.</p>
+                    </div>
+                    <div>
+                        <i class="ph-bold ph-funnel text-5xl kabum-orange mb-3"></i>
+                        <h4 class="font-bold kabum-blue text-xl mb-2">Pressão Estática (Static Pressure)</h4>
+                        <p class="text-gray-600">Projetadas para empurrar ar através de restrições, como radiadores ou dissipadores densos. Possuem pás mais largas e retas.</p>
+                        <p class="font-semibold mt-3">Ideal para: Radiadores de Water Coolers e Air Coolers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Módulo 3: Início -->
+        <div id="slide-9" class="slide">
+            <div class="p-8 sm:p-12 flex items-center justify-center slide-content text-center">
+                <div>
+                    <h2 class="text-lg uppercase font-semibold kabum-orange mb-2">Módulo 3</h2>
+                    <h3 class="text-5xl font-bold kabum-blue">Técnicas de Acabamento e Estética</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 3: Cable Management -->
+        <div id="slide-10" class="slide">
+             <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 3</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Gestão de Cabos: Dicas Essenciais</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-strategy text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Planeje Antes</h4>
+                        <p class="text-gray-600 text-sm">Antes de instalar a placa-mãe, passe os cabos principais (CPU, 24 pinos) pelos recortes. Facilita muito o processo.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                        <i class="ph-bold ph-path text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Use as Canaletas</h4>
+                        <p class="text-gray-600 text-sm">A maioria dos gabinetes modernos possui canaletas e pontos de amarração. Use-os para agrupar e guiar os cabos na parte traseira.</p>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg">
+                         <i class="ph-bold ph-scissors text-3xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Velcro > Abraçadeiras</h4>
+                        <p class="text-gray-600 text-sm">Fitas de velcro são reutilizáveis e permitem ajustes fáceis. Use abraçadeiras (zip ties) apenas para fixações permanentes no final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 4: Início -->
+        <div id="slide-11" class="slide">
+            <div class="p-8 sm:p-12 flex items-center justify-center slide-content text-center">
+                <div>
+                    <h2 class="text-lg uppercase font-semibold kabum-orange mb-2">Módulo 4</h2>
+                    <h3 class="text-5xl font-bold kabum-blue">Controle de Qualidade e Diagnóstico</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo 4: Teste de Bancada -->
+        <div id="slide-12" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 4</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">O "Pré-Voo": Teste de Bancada</h3>
+                <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">Essa etapa simples pode economizar horas de trabalho. Garante que os componentes vitais funcionam ANTES de serem instalados no gabinete.</p>
+                <div class="grid md:grid-cols-4 gap-4 text-center">
+                     <div class="bg-white/50 p-4 rounded-lg"><strong class="kabum-blue">1. Base:</strong> Coloque a placa-mãe sobre sua caixa antiestática.</div>
+                     <div class="bg-white/50 p-4 rounded-lg"><strong class="kabum-blue">2. Essencial:</strong> Instale CPU, Cooler, 1 pente de RAM e a GPU.</div>
+                     <div class="bg-white/50 p-4 rounded-lg"><strong class="kabum-blue">3. Energia:</strong> Conecte os cabos de 24 pinos e da CPU.</div>
+                     <div class="bg-white/50 p-4 rounded-lg"><strong class="kabum-blue">4. Boot:</strong> Dê um curto nos pinos do painel frontal com uma chave de fenda para ligar.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Módulo 4: Diagnóstico -->
+        <div id="slide-13" class="slide">
+            <div class="p-8 sm:p-12 slide-content">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 4</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-8">Metodologia de Diagnóstico</h3>
+                 <div class="text-left max-w-2xl mx-auto">
+                    <p class="text-gray-600 mb-2"><strong class="kabum-blue text-lg">Problema: O PC não liga, sem luzes, sem fans.</strong></p>
+                    <p class="bg-white/50 p-3 rounded-lg text-gray-700 mb-4"><strong>Solução:</strong> Verifique o cabo de força, o interruptor da fonte e a conexão de 24 pinos na placa-mãe.</p>
+                    
+                    <p class="text-gray-600 mb-2"><strong class="kabum-blue text-lg">Problema: O PC liga, fans giram, mas não há imagem (sem POST).</strong></p>
+                    <p class="bg-white/50 p-3 rounded-lg text-gray-700 mb-4"><strong>Solução:</strong> "Resseate" a memória RAM (remova e recoloque), verifique se a GPU está bem encaixada e se seus cabos de energia estão conectados.</p>
+                 </div>
+            </div>
+        </div>
+        
+        <!-- Módulo 4: Atividade Prática -->
+        <div id="slide-14" class="slide">
+            <div class="p-8 sm:p-12 slide-content flex flex-col items-center justify-center text-center">
+                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Módulo 4</h2>
+                <h3 class="text-3xl font-bold kabum-blue mb-6">Atividade Prática: Mãos à Obra!</h3>
+                <i class="ph-bold ph-users-three text-8xl kabum-orange mb-4"></i>
+                <p class="text-xl text-gray-700 max-w-3xl">Agora é com vocês! Vamos dividir em duas equipes.<br>Cada equipe receberá uma máquina com um problema de hardware comum.<br>A primeira a diagnosticar e apresentar a solução correta, vence!</p>
             </div>
         </div>
 
         <!-- Encerramento -->
-        <div id="slide-5" class="slide">
-            <div class="p-8 sm:p-12 slide-content">
-                <h2 class="text-sm uppercase font-semibold kabum-orange mb-1">Encerramento</h2>
-                <h3 class="text-3xl font-bold kabum-blue mb-8">Encerramento e Próximos Passos</h3>
-                 <div class="grid md:grid-cols-3 gap-6 text-left">
-                    <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-presentation-chart text-3xl kabum-orange mb-2"></i>
+        <div id="slide-15" class="slide">
+            <div class="p-8 sm:p-12 slide-content flex flex-col items-center justify-center text-center">
+                <h3 class="text-5xl font-bold kabum-blue mb-8">Obrigado!</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                     <div>
+                        <i class="ph-bold ph-presentation-chart text-5xl kabum-orange mb-2"></i>
                         <h4 class="font-bold kabum-blue text-lg mb-1">Recapitulação</h4>
-                        <p class="text-gray-600 text-sm">Revisamos desde o planejamento e a importância da sinergia até as técnicas avançadas de montagem e diagnóstico de falhas.</p>
+                        <p class="text-gray-600 text-sm">Passamos por todas as etapas para criar montagens de alto nível.</p>
                     </div>
-                    <div class="bg-white/50 p-4 rounded-lg">
-                        <i class="ph-bold ph-seal-check text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Novas Diretrizes</h4>
-                        <p class="text-gray-600 text-sm">Vamos aplicar este conhecimento para estabelecer um novo padrão de qualidade e excelência em todas as nossas montagens.</p>
+                     <div>
+                        <i class="ph-bold ph-seal-check text-5xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Próximos Passos</h4>
+                        <p class="text-gray-600 text-sm">Aplicar esse conhecimento para elevar nosso padrão de qualidade.</p>
                     </div>
-                    <div class="bg-white/50 p-4 rounded-lg">
-                         <i class="ph-bold ph-question text-3xl kabum-orange mb-2"></i>
-                        <h4 class="font-bold kabum-blue text-lg mb-1">Feedback e Dúvidas</h4>
-                        <p class="text-gray-600 text-sm">Este é o momento para perguntas, sugestões e para compartilharmos nossas experiências. Obrigado a todos!</p>
+                     <div>
+                        <i class="ph-bold ph-question text-5xl kabum-orange mb-2"></i>
+                        <h4 class="font-bold kabum-blue text-lg mb-1">Dúvidas?</h4>
+                        <p class="text-gray-600 text-sm">Estamos abertos para perguntas e feedback.</p>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- Navegação e Progresso -->
         <div class="bg-gray-200/80 p-4 flex items-center justify-between">
@@ -243,14 +381,14 @@
                 }
             });
             
-            // Navegação com as setas do teclado
+            // Navegação com as setas do teclado e passador de slides
             document.addEventListener('keydown', (e) => {
-                if(e.key === 'ArrowRight'){
+                if(e.key === 'ArrowRight' || e.key === 'PageDown'){
                     if (currentSlide < totalSlides - 1) {
                         currentSlide++;
                         showSlide(currentSlide);
                     }
-                } else if (e.key === 'ArrowLeft') {
+                } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
                      if (currentSlide > 0) {
                         currentSlide--;
                         showSlide(currentSlide);
