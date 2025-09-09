@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heatmap de Avaliação Modernizado</title>
+    <!-- Incluindo Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Aplicando a fonte Inter ao projeto
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-slate-100 font-sans flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+
+    <div class="w-full max-w-7xl bg-white rounded-2xl shadow-lg border border-slate-200/80 overflow-hidden">
+        <div class="p-6 border-b border-slate-200">
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight text-center">Relatório de Avaliação de Qualidade</h1>
+            <p class="text-sm text-slate-500 text-center mt-2">Análise de problemas por categoria e mês</p>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm" id="heatmap-table">
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-left w-1/6">Categoria</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-left w-2/6">Avaliação</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Junho</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Julho</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Agosto</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-slate-600 uppercase tracking-wider text-center w-1/12">Total</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200" id="table-body">
+                    <!-- As linhas da tabela serão inseridas aqui dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const tableData = [
+            {
+                category: 'Funcionamento do PC',
+                items: [
+                    { evaluation: 'Problemas com o Sistema (Driver, OS, BIOS, etc)', junho: 1, julho: 1, agosto: 2, total: 4 },
+                    { evaluation: 'Peça não funciona', junho: null, julho: 1, agosto: 4, total: 5 },
+                    { evaluation: 'Não Liga', junho: 3, julho: 1, agosto: 2, total: 6 },
+                    { evaluation: 'Liga, mas dá erro (Sem imagem, tela azul, etc)', junho: 2, julho: null, agosto: 3, total: 5 },
+                ],
+                total: { junho: 7, julho: 2, agosto: 11, total: 20 }
+            },
+            {
+                category: 'Qualidade da Montagem',
+                items: [
+                    { evaluation: 'Ventoinhas (Montagem errada, não liga, etc)', junho: 3, julho: 2, agosto: 2, total: 7 },
+                    { evaluation: 'Peça solta', junho: 4, julho: null, agosto: 3, total: 7 },
+                    { evaluation: 'Conexões não funcionam (Painéis, USB, etc)', junho: 1, julho: 1, agosto: null, total: 2 },
+                    { evaluation: 'Cabos desconectados', junho: 1, julho: 1, agosto: 1, total: 3 },
+                ],
+                total: { junho: 9, julho: 4, agosto: 6, total: 19 }
+            },
+            {
+                category: 'Transporte',
+                items: [
+                    { evaluation: 'Problema com embalagem', junho: null, julho: null, agosto: 1, total: 1 },
+                    { evaluation: 'Consta como entregue, mas não recebi', junho: null, julho: null, agosto: 1, total: 1 },
+                    { evaluation: 'Atraso na entrega', junho: 2, julho: null, agosto: null, total: 2 },
+                ],
+                total: { junho: 2, julho: 0, agosto: 2, total: 4 }
+            },
+            {
+                category: 'Visual do PC',
+                items: [
+                    { evaluation: 'RGB com problemas', junho: 2, julho: null, agosto: 1, total: 3 },
+                    { evaluation: 'Fios desorganizados', junho: 2, julho: null, agosto: 2, total: 4 },
+                ],
+                total: { junho: 4, julho: 0, agosto: 3, total: 7 }
+            }
+        ];
+
+        // Função para determinar a cor da célula com base no valor (lógica do heatmap)
+        function getHeatmapColor(value) {
+            if (value === null || value === 0 || value === undefined) {
+                return 'bg-white';
+            }
+            if (value >= 4) return 'bg-orange-600 text-white';
+            if (value >= 3) return 'bg-orange-500 text-white';
+            if (value >= 2) return 'bg-orange-400 text-slate-800';
+            if (value >= 1) return 'bg-orange-300 text-slate-800';
+            return 'bg-white';
+        }
+
+        const tableBody = document.getElementById('table-body');
+
+        tableData.forEach((data) => {
+            const categoryRowCount = data.items.length + 1; 
+
+            data.items.forEach((item, itemIndex) => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50';
+                
+                if (itemIndex === 0) {
+                    const categoryCell = document.createElement('td');
+                    categoryCell.textContent = data.category;
+                    categoryCell.className = 'px-6 py-4 bg-blue-800 text-white font-bold text-center align-middle';
+                    categoryCell.setAttribute('rowspan', categoryRowCount);
+                    row.appendChild(categoryCell);
+                }
+                
+                const evaluationCell = document.createElement('td');
+                evaluationCell.textContent = item.evaluation;
+                evaluationCell.className = 'px-6 py-4 text-slate-700';
+                row.appendChild(evaluationCell);
+
+                ['junho', 'julho', 'agosto', 'total'].forEach(month => {
+                    const cell = document.createElement('td');
+                    const value = item[month];
+                    cell.textContent = value ?? '';
+                    cell.className = `px-6 py-4 text-center font-medium transition-colors duration-300 ${getHeatmapColor(value)}`;
+                    row.appendChild(cell);
+                });
+
+                tableBody.appendChild(row);
+            });
+            
+            const totalRow = document.createElement('tr');
+            totalRow.className = 'bg-slate-100 font-semibold';
+            
+            const totalLabelCell = document.createElement('td');
+            totalLabelCell.textContent = `${data.category} Total`;
+            totalLabelCell.className = 'px-6 py-4 text-slate-800';
+            totalRow.appendChild(totalLabelCell);
+
+            ['junho', 'julho', 'agosto', 'total'].forEach(month => {
+                const cell = document.createElement('td');
+                const value = data.total[month];
+                cell.textContent = value ?? '';
+                cell.className = 'px-6 py-4 text-center text-slate-800';
+                totalRow.appendChild(cell);
+            });
+
+            tableBody.appendChild(totalRow);
+        });
+
+    </script>
+</body>
+</html>
+
+
